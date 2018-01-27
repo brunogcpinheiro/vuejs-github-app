@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <h1>Hello VueJS and Vuetify</h1>
   </div>
 </template>
 
