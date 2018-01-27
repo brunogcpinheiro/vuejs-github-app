@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ title }}
     <Search />
     <UserInfo />
     <Actions />
@@ -24,7 +23,6 @@ export default {
   },
   data () {
     return {
-      title: 'Teste'
     }
   }
 }

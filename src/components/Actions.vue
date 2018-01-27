@@ -1,6 +1,6 @@
 <template>
   <div class="actions">
-    <button @click="showRepos">
+    <button @click="handle">
       Mostrar Repositórios
     </button>
     <button>
@@ -16,18 +16,19 @@ export default {
 
   data () {
     return {
-      show: false
+      isActive: false
     }
   },
   methods: {
-    showRepos () {
-      console.log(!this.show)
+    handle () {
+      this.isActive = !this.isActive
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
+
 button {
   background: transparent;
   border-radius: 4px;
