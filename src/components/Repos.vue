@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
 
   name: 'Repos',
@@ -35,7 +34,7 @@ export default {
   },
   methods: {
     fetchReposData () {
-      axios.get(`https://api.github.com/users/brunogcpinheiro/repos`).then(res => {
+      this.axios.get(`https://api.github.com/users/brunogcpinheiro/repos`).then(res => {
         res.data.map(repo => {
           this.repos.push({
             name: repo.name,
@@ -45,7 +44,7 @@ export default {
       })
     },
     fetchStarredData () {
-      axios.get(`https://api.github.com/users/brunogcpinheiro/starred`).then(res => {
+      this.axios.get(`https://api.github.com/users/brunogcpinheiro/starred`).then(res => {
         res.data.map(star => {
           this.starred.push({
             name: star.name,

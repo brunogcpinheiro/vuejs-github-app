@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
 
   name: 'UserInfo',
@@ -32,7 +31,7 @@ export default {
   },
   methods: {
     fetchData () {
-      axios.get(`https://api.github.com/users/brunogcpinheiro`).then(res => {
+      this.axios.get(`https://api.github.com/users/brunogcpinheiro`).then(res => {
         this.username = res.data.name
         this.login = res.data.login
         this.image = res.data.avatar_url
