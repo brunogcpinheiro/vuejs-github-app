@@ -2,11 +2,11 @@
   <div class="repos-info">
     <div class="repos">
       <h3>Repositórios</h3>
-      <p>{{ repos }}</p>
+      <p :key="index" v-for="(repo, index) in repos">{{ repo.name }}</p>
     </div>
     <div class="starred">
       <h3>Favoritos</h3>
-      <p>{{ starred }}</p>
+      <p :key="index" v-for="(star, index) in starred">{{ star.name }}</p>
     </div>
   </div>
 </template>
@@ -30,12 +30,16 @@ export default {
   methods: {
     fetchReposData () {
       axios.get(`https://api.github.com/users/brunogcpinheiro/repos`).then(res => {
-        this.repos = res.data[0].name
+        res.data.map(repo => {
+          this.repos.push(repo)
+        })
       })
     },
     fetchStarredData () {
       axios.get(`https://api.github.com/users/brunogcpinheiro/starred`).then(res => {
-        this.starred = res.data[0].name
+        res.data.map(star => {
+          this.starred.push(star)
+        })
       })
     }
   }
@@ -43,4 +47,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.repos.info {
+  display: flex;
+  justify-content: space-between;
+}
+.repos {
+  float: left;
+  width: 50%;
+}
+
+.starred {
+  float: right;
+  width: 50%;
+  padding-left: 10px;
+}
 </style>

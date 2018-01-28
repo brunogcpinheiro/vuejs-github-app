@@ -3,6 +3,7 @@
     <img :src="image" alt="Avatar">
     <div class="user-info">
       <h2><a href="https://github.com/brunogcpinheiro">{{ username }}</a></h2>
+      <p>Username: <span>{{ login }}</span></p>
       <p>Repositórios: <span>{{ repos }}</span></p>
       <p>Seguidores: <span>{{ followers }}</span></p>
       <p>Seguindo: <span>{{ following }}</span></p>
@@ -18,6 +19,7 @@ export default {
 
   data () {
     return {
+      login: null,
       username: null,
       image: null,
       repos: null,
@@ -32,6 +34,7 @@ export default {
     fetchData () {
       axios.get(`https://api.github.com/users/brunogcpinheiro`).then(res => {
         this.username = res.data.name
+        this.login = res.data.login
         this.image = res.data.avatar_url
         this.repos = res.data.public_repos
         this.followers = res.data.followers
@@ -53,13 +56,13 @@ span {
   font-weight: bold;
 }
 
-a, a:visited, a:hover, a:link {
+a, a:visited, a:hover, a:link, a:active {
   text-decoration: none;
 }
 
 .user-info {
   float: left;
   padding: 10px;
-  margin: 15px;
+  margin: 0 15px;
 }
 </style>
