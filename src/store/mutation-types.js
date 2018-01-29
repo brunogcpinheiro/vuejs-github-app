@@ -1,0 +1,1 @@
+export const INIT_TEST = 'INIT_TEST'

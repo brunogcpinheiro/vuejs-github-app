@@ -4,8 +4,8 @@
     <v-text-field
       label="Digite o nome do usuário..."
       type="search"
-      color="indigo darker-1"
-    ></v-text-field>
+      color="indigo darker-1">
+    </v-text-field>
   </v-form>
   </div>
 </template>

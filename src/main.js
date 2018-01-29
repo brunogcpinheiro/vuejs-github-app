@@ -7,6 +7,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
 
+store.commit('INIT_TEST', [{ 'test': 'pêra' }])
+
 Vue.use(Vuetify)
 Vue.use(VueAxios, axios)
 

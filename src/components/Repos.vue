@@ -5,6 +5,7 @@
       <p :key="index" v-for="(repo, index) in repos"><a :href="repo.link" target="blank">{{ repo.name }}</a></p>
     </div>
     <div class="starred">
+      {{ $store.state }}
       <h3>Favoritos</h3>
       <p :key="index" v-for="(star, index) in starred"><a :href="star.link" target="blank">{{ star.name }}</a></p>
     </div>
