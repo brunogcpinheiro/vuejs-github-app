@@ -55,8 +55,13 @@ span {
   font-weight: bold;
 }
 
-a, a:visited, a:hover, a:link, a:active {
+a, a:visited, a:link, a:active {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #0984e3;
 }
 
 .user-info {

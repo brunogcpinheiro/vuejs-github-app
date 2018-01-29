@@ -1,11 +1,11 @@
 <template>
   <div class="actions">
-    <button @click="handle">
-      Mostrar Repositórios
-    </button>
-    <button>
-      Mostrar Favoritos
-    </button>
+    <v-btn>
+      Esconder Repositórios
+    </v-btn>
+    <v-btn>
+      Esconder Favoritos
+    </v-btn>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ button {
   cursor: pointer;
   height: 50px;
   padding: 10px;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 
 .actions {
