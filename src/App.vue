@@ -32,6 +32,7 @@ export default {
 * {
   box-sizing: border-box;
   font-family: 'Space Mono', sans-serif;
+  background: #dfe6e9;
 }
 
 #app {
