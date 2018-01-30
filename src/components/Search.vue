@@ -13,20 +13,14 @@
 <script>
 export default {
 
-  name: 'Search',
+  name: 'Search'
 
-  data () {
-    return {
-
-    }
-  }
 }
 </script>
 
 <style lang='css' scoped>
 input {
   width: 100%;
-  padding: 10px;
   font-size: 20px;
   border-color: 1px solid royalblue;
   border-radius: 5px;

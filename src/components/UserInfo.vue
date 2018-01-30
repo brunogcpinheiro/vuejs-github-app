@@ -2,7 +2,7 @@
   <div class="userinfo">
     <img :src="image" alt="Avatar">
     <div class="user-info">
-      <h2><a href="https://github.com/brunogcpinheiro">{{ username }}</a></h2>
+      <h2><a href="https://github.com/brunogcpinheiro" target="blank">{{ username }}</a></h2>
       <p>Username: <span>{{ login }}</span></p>
       <p>Repositórios: <span>{{ repos }}</span></p>
       <p>Seguidores: <span>{{ followers }}</span></p>
