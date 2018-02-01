@@ -2,7 +2,7 @@
   <div class="userinfo">
     <img :src="image" alt="Avatar">
     <div class="user-info">
-      <h2><a href="https://github.com/brunogcpinheiro" target="blank">{{ username }}</a></h2>
+      <h2><a :href="href" target="blank">{{ username }}</a></h2>
       <p>Username: <span>{{ login }}</span></p>
       <p>Repositórios: <span>{{ repos }}</span></p>
       <p>Seguidores: <span>{{ followers }}</span></p>
@@ -23,7 +23,8 @@ export default {
       image: null,
       repos: null,
       followers: null,
-      following: null
+      following: null,
+      href: `https://github.com/${this.user}`
     }
   },
   created () {
@@ -31,7 +32,7 @@ export default {
   },
   methods: {
     fetchData () {
-      this.axios.get(`https://api.github.com/users/brunogcpinheiro`).then(res => {
+      this.axios.get(`https://api.github.com/users/${this.user}`).then(res => {
         this.username = res.data.name
         this.login = res.data.login
         this.image = res.data.avatar_url
@@ -39,6 +40,11 @@ export default {
         this.followers = res.data.followers
         this.following = res.data.following
       })
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   }
 }

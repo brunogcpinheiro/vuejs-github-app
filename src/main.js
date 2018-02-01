@@ -5,6 +5,7 @@ import App from './App'
 import Vuetify from 'vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import store from './store'
 
 // store.commit('INIT_TEST', { 'test': 'pêra' })
 
@@ -16,6 +17,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   components: { App },
   template: '<App/>'
 })
