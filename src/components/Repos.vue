@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     fetchReposData () {
-      this.axios.get(`https://api.github.com/users/${this.user}/repos`).then(res => {
+      this.axios.get(`https://api.github.com/users/${this.$store.state.user.login}/repos`).then(res => {
         res.data.map(repo => {
           this.repos.push({
             name: repo.name,
@@ -44,7 +44,7 @@ export default {
       })
     },
     fetchStarredData () {
-      this.axios.get(`https://api.github.com/users/${this.user}/starred`).then(res => {
+      this.axios.get(`https://api.github.com/users/${this.$store.state.user.login}/starred`).then(res => {
         res.data.map(star => {
           this.starred.push({
             name: star.name,
@@ -52,11 +52,6 @@ export default {
           })
         })
       })
-    }
-  },
-  computed: {
-    user () {
-      return this.$store.state.user
     }
   }
 }

@@ -1,19 +1,41 @@
 <template>
   <div>
-    <v-form>
-    <v-text-field
-      label="Digite o nome do usuário..."
-      type="search"
-      color="indigo darker-1">
-    </v-text-field>
-  </v-form>
+    <form @keypress.enter.prevent="handleSearch()">
+      <input
+        type="text"
+        placeholder="Digite o usuário aqui..."
+        v-model="inputValue" />
+    </form>
   </div>
 </template>
 
 <script>
 export default {
 
-  name: 'Search'
+  name: 'Search',
+
+  data () {
+    return {
+      inputValue: ''
+    }
+  },
+
+  methods: {
+    handleSearch () {
+      this.axios.get(`https://api.github.com/users/${this.inputValue}`).then(res => {
+        this.$store.state.user = {
+          login: res.data.login,
+          username: res.data.name,
+          image: res.data.avatar_url,
+          repos: res.data.public_repos,
+          followers: res.data.followers,
+          following: res.data.following,
+          link: res.data.html_url
+        }
+      })
+      this.inputValue = ''
+    }
+  }
 
 }
 </script>
