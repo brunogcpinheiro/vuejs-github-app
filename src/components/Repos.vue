@@ -1,9 +1,19 @@
 <template>
-  <div class="repos-info">
+  <div class="repos-info" v-if="isFetched">
     <div class="repos">
       <h3>Repositórios</h3>
       <p :key="index" v-for="(repo, index) in repos">
-        {{ repo.name }}
+        <a :href="repo.link" target="blank">
+          {{ repo.name }}
+        </a>
+      </p>
+    </div>
+    <div class="starred">
+      <h3>Favoritos</h3>
+      <p :key="index" v-for="(star, index) in starred">
+        <a :href="star.link" target="blank">
+          {{ star.name }}
+        </a>
       </p>
     </div>
   </div>
@@ -17,6 +27,12 @@ export default {
   computed: {
     repos () {
       return this.$store.state.repos
+    },
+    starred () {
+      return this.$store.state.starred
+    },
+    isFetched () {
+      return this.$store.state.isFetched
     }
   }
 }

@@ -44,6 +44,6 @@ a:hover {
 .user-info {
   float: left;
   padding: 10px;
-  margin: 0 15px;
+  margin: 15px;
 }
 </style>

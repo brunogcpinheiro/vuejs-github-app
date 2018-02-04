@@ -7,6 +7,7 @@ const store = new Vuex.Store({
   state: {
     user: [],
     repos: [],
+    starred: [],
     isFetched: false
   }
 })

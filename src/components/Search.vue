@@ -39,13 +39,25 @@ export default {
       this.axios.get(`https://api.github.com/users/${this.inputValue}/repos`).then(res => {
         res.data.map(repo => {
           this.$store.state.repos.push({
-            name: repo.name
+            name: repo.name,
+            link: repo.html_url
           })
         })
       })
 
-      this.inputValue = ''
+      this.axios.get(`https://api.github.com/users/${this.inputValue}/starred`).then(res => {
+        res.data.map(star => {
+          this.$store.state.starred.push({
+            name: star.name,
+            link: star.html_url
+          })
+        })
+      })
+
+      this.$store.state.repos = []
+      this.$store.state.starred = []
       this.$store.state.isFetched = true
+      this.inputValue = ''
     }
   }
 
