@@ -43,6 +43,8 @@ export default {
             link: repo.html_url
           })
         })
+      }).catch(() => {
+        this.$swal('Oh no', 'Erro na requisição', 'error')
       })
 
       this.axios.get(`https://api.github.com/users/${this.inputValue}/starred`).then(res => {
@@ -52,6 +54,8 @@ export default {
             link: star.html_url
           })
         })
+      }).catch(() => {
+        this.$swal('Oh no', 'Erro na requisição', 'error')
       })
 
       this.$store.state.repos = []
