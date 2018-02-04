@@ -1,10 +1,10 @@
 <template>
   <div class="actions" v-if="isFetched">
     <button @click="handleShowRepos">
-      Mostrar Repositórios
+      Mostrar Alguns Repositórios
     </button>
     <button @click="handleShowStarred">
-      Mostrar Favoritos
+      Mostrar Alguns Favoritos
     </button>
   </div>
 </template>

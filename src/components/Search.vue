@@ -33,7 +33,7 @@ export default {
           link: res.data.html_url
         }
       }).catch(() => {
-        this.$swal('Oh ow', 'Usuário não encontrado', 'error')
+        this.$swal('Oh no', 'Usuário não encontrado', 'error')
       })
 
       this.axios.get(`https://api.github.com/users/${this.inputValue}/repos`).then(res => {
