@@ -57,6 +57,8 @@ export default {
       this.$store.state.repos = []
       this.$store.state.starred = []
       this.$store.state.isFetched = true
+      this.$store.state.isShowedRepos = false
+      this.$store.state.isShowedStarred = false
       this.inputValue = ''
     }
   }

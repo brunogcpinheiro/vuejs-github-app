@@ -1,9 +1,9 @@
 <template>
   <div class="actions" v-if="isFetched">
-    <button>
+    <button @click="handleShowRepos">
       Mostrar Repositórios
     </button>
-    <button>
+    <button @click="handleShowStarred">
       Mostrar Favoritos
     </button>
   </div>
@@ -14,14 +14,12 @@ export default {
 
   name: 'Actions',
 
-  data () {
-    return {
-      isActive: false
-    }
-  },
   methods: {
-    handle () {
-      this.isActive = !this.isActive
+    handleShowRepos () {
+      this.$store.state.isShowedRepos = true
+    },
+    handleShowStarred () {
+      this.$store.state.isShowedStarred = true
     }
   },
   computed: {

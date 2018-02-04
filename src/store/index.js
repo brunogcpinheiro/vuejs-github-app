@@ -8,7 +8,9 @@ const store = new Vuex.Store({
     user: [],
     repos: [],
     starred: [],
-    isFetched: false
+    isFetched: false,
+    isShowedRepos: false,
+    isShowedStarred: false
   }
 })
 
