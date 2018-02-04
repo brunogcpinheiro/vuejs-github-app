@@ -5,12 +5,12 @@ import App from './App'
 import Vuetify from 'vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import swal from 'vue-sweetalert2'
 import store from './store'
-
-// store.commit('INIT_TEST', { 'test': 'pêra' })
 
 Vue.use(Vuetify)
 Vue.use(VueAxios, axios)
+Vue.use(swal)
 
 Vue.config.productionTip = false
 

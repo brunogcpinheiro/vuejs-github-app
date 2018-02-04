@@ -1,5 +1,5 @@
 <template>
-  <div class="userinfo">
+  <div class="userinfo" v-if="isFetched">
     <img :src="info.image" alt="Avatar">
     <div class="user-info">
       <h2><a :href="info.link" target="blank">{{ info.username }}</a></h2>
@@ -17,6 +17,9 @@ export default {
   computed: {
     info () {
       return this.$store.state.user
+    },
+    isFetched () {
+      return this.$store.state.isFetched
     }
   }
 }

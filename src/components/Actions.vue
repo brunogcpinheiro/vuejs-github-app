@@ -1,11 +1,11 @@
 <template>
-  <div class="actions">
-    <v-btn>
-      Esconder Repositórios
-    </v-btn>
-    <v-btn>
-      Esconder Favoritos
-    </v-btn>
+  <div class="actions" v-if="isFetched">
+    <button>
+      Mostrar Repositórios
+    </button>
+    <button>
+      Mostrar Favoritos
+    </button>
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     handle () {
       this.isActive = !this.isActive
     }
+  },
+  computed: {
+    isFetched () {
+      return this.$store.state.isFetched
+    }
   }
 }
 </script>
@@ -32,8 +37,8 @@ export default {
 button {
   background: transparent;
   border-radius: 4px;
-  border: 2px solid blue;
-  color: blue;
+  border: 1px solid black;
+  color: black;
   width: 49%;
   cursor: pointer;
   height: 50px;

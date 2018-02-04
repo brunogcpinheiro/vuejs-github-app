@@ -32,8 +32,20 @@ export default {
           following: res.data.following,
           link: res.data.html_url
         }
+      }).catch(() => {
+        this.$swal('Oh ow', 'Usuário não encontrado', 'error')
       })
+
+      this.axios.get(`https://api.github.com/users/${this.inputValue}/repos`).then(res => {
+        res.data.map(repo => {
+          this.$store.state.repos.push({
+            name: repo.name
+          })
+        })
+      })
+
       this.inputValue = ''
+      this.$store.state.isFetched = true
     }
   }
 
@@ -44,7 +56,12 @@ export default {
 input {
   width: 100%;
   font-size: 20px;
-  border-color: 1px solid royalblue;
+  border: 1px dashed black;
   border-radius: 5px;
+  padding: 10px;
+}
+
+.sweet-alert {
+  background: white;
 }
 </style>
