@@ -3,6 +3,7 @@
     <Search />
     <UserInfo />
     <Actions />
+    <Repos />
   </div>
 </template>
 
